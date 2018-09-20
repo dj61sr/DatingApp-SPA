@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IUser } from '../../_models/iuser';
+import { User } from '../../_models/User';
 import { AlertifyService } from '../../services/alertify.service';
 import { UserService } from '../../services/user.service';
 
@@ -9,7 +9,7 @@ import { UserService } from '../../services/user.service';
   styleUrls: ['./member-list.component.css']
 })
 export class MemberListComponent implements OnInit {
-  users: IUser[];
+  users: User[];
 
   constructor(private userService: UserService, private alertify: AlertifyService) { }
 
@@ -18,7 +18,7 @@ export class MemberListComponent implements OnInit {
   }
 
   loadUsers() {
-    this.userService.getUsers().subscribe((users: IUser[]) => {
+    this.userService.getUsers().subscribe((users: User[]) => {
       this.users = users;
     }, error => {
       this.alertify.error(error);
