@@ -6,3 +6,11 @@
   max-width: 2000px;
   padding-right: 30px;
 }
+
+img {
+  max-height: 50px;
+  border: 2px solid white;
+  display: inline;
+  margin-right: 1px;
+
+}
